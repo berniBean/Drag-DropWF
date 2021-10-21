@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,33 +11,38 @@ namespace DragDrop
 {
     public partial class Form1 : Form
     {
-        BindingListPDF obBinding;
 
-        List<Pdfs> itemPdf = new List<Pdfs>();
+
+        
+        private BindingSource bs;
+        private DirFiles files = new DirFiles();
+        private DirectionService NameFiles = new DirectionService();
         public Form1()
         {
             InitializeComponent();
+            bs = new BindingSource();
+
         }
+
+
+
 
         private void DropFiles_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.All;
         }
-
+        
         private void DropFiles_DragDrop(object sender, DragEventArgs e)
         {
-            string[] archivos = (string[])e.Data.GetData(DataFormats.FileDrop, false);
-            
-            DirectoryInfo di = new DirectoryInfo(string.Join(" ", archivos));
 
-            foreach(var fi in di.GetFiles())
-            {
-                Pdfs item = new Pdfs(fi.Name);
+            files.direccionArchivos((string[])e.Data.GetData(DataFormats.FileDrop, false));
 
-                itemPdf.Add(item);
-            }
+            NameFiles.GetFileName(files.archivos);
 
-            DropFiles.DataSource = itemPdf.ToString();
+            bs.DataSource = NameFiles.itemPdf;
+            DropFiles.DataSource = bs;
+            DropFiles.DisplayMember = "_name";
+            bs.CurrencyManager.Refresh();
             
         }
     }

@@ -9,6 +9,10 @@ namespace DragDrop
     public class Pdfs 
     {
         public string _name { get; set; }
+        public Pdfs()
+        {
+
+        }
         public Pdfs(string Name)
         {
             _name = Name;
