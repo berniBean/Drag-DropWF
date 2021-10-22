@@ -1,4 +1,5 @@
 ﻿using DragDrop;
+using Singleton;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,16 +9,26 @@ using System.Threading.Tasks;
 
 namespace Strategy
 {
-    public class NombreArchivo : ISingleFileService
+    public class NombreArchivo : IDataFileService
     {
         private FileInfo direction { get; set; }
 
-        public FileInfo SingleFileData(string ruta)
+        public List<ChocoPdfs> dataFile(string ruta)
         {
+
             direction = new FileInfo(ruta);
-           
-            return direction;
+
+
+            ChocoPdfs chocho = new ChocoPdfs(direction.Name, direction.FullName);
+            ChocolateBoiler.getInstance().addPdf(chocho);
+
+            return ChocolateBoiler.getInstance().readPdf();
+        }
+
+        public string typeFile()
+        {
             
+            return "Archive";
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DragDrop;
+using Singleton;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,23 +9,27 @@ using System.Threading.Tasks;
 
 namespace Strategy
 {
-    public class NombreArchivos : IDataFileService
+    public class NombreArchivos :  IDataFileService
     {
-        private DirectoryInfo direction;
-        public List<Pdfs> itemPdf { get; set; } = new List<Pdfs>();
+        
+        
+        public DirectoryInfo direction { get; set; }      
 
-        public List<Pdfs> dataFile(string ruta)
+        public List<ChocoPdfs> dataFile(string ruta)
         {
             direction = new DirectoryInfo(ruta);
-
             foreach (var fi in direction.GetFiles())
             {
-                Pdfs item = new Pdfs(fi.Name);
-                itemPdf.Add(item);
+                ChocoPdfs choco = new ChocoPdfs(fi.Name, fi.FullName); 
+                ChocolateBoiler.getInstance().addPdf(choco);
             }
 
-            return itemPdf;
+            return ChocolateBoiler.getInstance().readPdf();
         }
 
+        public string typeFile()
+        {
+            return "Directory";
+        }
     }
 }

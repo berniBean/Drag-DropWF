@@ -9,6 +9,7 @@ namespace Strategy
 {
     public interface IDirectionService
     {
-        public void fileDirection(string[] dir); 
+        public void fileDirection(string[] dir);
+        public string TypeFile();
     }
 }

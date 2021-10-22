@@ -1,4 +1,5 @@
 ﻿using DragDrop;
+using Singleton;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,13 +14,21 @@ namespace Strategy
         public string[] dir { get; set; }
         private IDirectionService _directionService;
         private IDataFileService _dataFileService;
-        private ISingleFileService _singleFileService;
 
-        public InfoFiles(IDirectionService DirectionService, IDataFileService DataFileService, ISingleFileService SingleFileService)
+
+        public IDataFileService DataFileService
+        {
+            set { _dataFileService = value; }
+        }
+        public InfoFiles()
+        {
+
+        }
+        public InfoFiles(IDirectionService DirectionService, IDataFileService DataFileService)
         {
             _directionService = DirectionService;
             _dataFileService = DataFileService;
-            _singleFileService = SingleFileService;
+            
         }
 
         public void performDirection()
@@ -28,15 +37,17 @@ namespace Strategy
             
         }
 
-        public List<Pdfs> performNameFiles()
+        public string performTypeFile()
+        {
+            return _directionService.TypeFile();
+        }
+
+        public List<ChocoPdfs> performNameFiles()
         {
             return _dataFileService.dataFile(string.Join(" ", dir));
             
         }
 
-        public FileInfo performSingleFileData()
-        {
-            return _singleFileService.SingleFileData(string.Join(" ", dir));
-        }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DragDrop;
+using Singleton;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,8 @@ namespace Strategy
 {
     public interface IDataFileService
     {
-        public List<Pdfs> dataFile(string ruta);
+        public List<ChocoPdfs> dataFile(string ruta);
+        public string typeFile();
 
     }
 }

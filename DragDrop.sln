@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragDrop", "DragDrop\DragDrop.csproj", "{DB0A648A-615F-4C85-A81A-BFEBE3809DDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy", "Strategy\Strategy.csproj", "{0283A11A-7082-4359-BB4A-8B2DCDA4A61A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strategy", "Strategy\Strategy.csproj", "{0283A11A-7082-4359-BB4A-8B2DCDA4A61A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Singleton", "..\..\ConsoleFactory\Singleton\Singleton.csproj", "{C9338C13-96C8-4C03-828C-9939E58E86F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0283A11A-7082-4359-BB4A-8B2DCDA4A61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0283A11A-7082-4359-BB4A-8B2DCDA4A61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0283A11A-7082-4359-BB4A-8B2DCDA4A61A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9338C13-96C8-4C03-828C-9939E58E86F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9338C13-96C8-4C03-828C-9939E58E86F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9338C13-96C8-4C03-828C-9939E58E86F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9338C13-96C8-4C03-828C-9939E58E86F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

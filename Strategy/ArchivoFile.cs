@@ -9,11 +9,11 @@ namespace Strategy
     public class ArchivoFile : InfoFiles
     {
 
-        public ArchivoFile(IDirectionService DirectionService, IDataFileService DataFileService, ISingleFileService SingleFileService) : base(DirectionService, DataFileService, SingleFileService)
+        public ArchivoFile(IDirectionService DirectionService, IDataFileService DataFileService) : base(DirectionService, DataFileService)
         {
             DirectionService = new Archivo();
-            DataFileService = new NombreArchivos();
-            SingleFileService = new NombreArchivo();
+            DataFileService = new NombreArchivo();
+            
         }
     }
 }
