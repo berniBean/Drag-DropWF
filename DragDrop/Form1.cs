@@ -1,4 +1,4 @@
-﻿using DragDrop.Clases;
+﻿
 using Singleton;
 using Strategy;
 using System;
@@ -15,6 +15,7 @@ namespace DragDrop
     public partial class Form1 : Form
     {
         private InfoFiles model = new CarpetasFiles(new Archivo(), new NombreArchivos());
+        
         private BindingSource bs;
 
         
