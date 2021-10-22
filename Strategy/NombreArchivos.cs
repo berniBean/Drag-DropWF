@@ -27,9 +27,9 @@ namespace Strategy
             return ChocolateBoiler.getInstance().readPdf();
         }
 
-        public string typeFile()
+        public List<ChocoPdfs> deleteFile()
         {
-            return "Directory";
+            return ChocolateBoiler.getInstance().clearPdf();
         }
     }
 }

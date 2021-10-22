@@ -54,5 +54,13 @@ namespace DragDrop
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            bs.DataSource = model.PerformClearList();
+            DropFiles.DataSource = bs;
+            DropFiles.DisplayMember = "_name";
+            bs.CurrencyManager.Refresh();
+        }
     }
 }

@@ -48,6 +48,11 @@ namespace Strategy
             
         }
 
+        public List<ChocoPdfs> PerformClearList()
+        {
+           return  _dataFileService.deleteFile();
+        }
+
 
     }
 }

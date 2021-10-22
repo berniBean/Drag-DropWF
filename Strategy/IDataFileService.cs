@@ -11,7 +11,7 @@ namespace Strategy
     public interface IDataFileService
     {
         public List<ChocoPdfs> dataFile(string ruta);
-        public string typeFile();
+        public List<ChocoPdfs> deleteFile();
 
     }
 }
